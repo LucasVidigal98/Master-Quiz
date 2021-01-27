@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/react-in-jsx-scope */
 import styled from 'styled-components';
 
 // src/components/Footer/index.js
@@ -7,6 +9,7 @@ const FooterWrapper = styled.footer`
   display: flex;
   align-items: center;
   border-radius: 4px; 
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
   img {
     width: 58px;
     margin-right: 23px;
@@ -28,6 +31,7 @@ const FooterWrapper = styled.footer`
 export default function Footer(props) {
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
+    // eslint-disable-next-line react/react-in-jsx-scope
     <FooterWrapper {...props}>
       <a href="https://www.alura.com.br/">
         <img src="https://www.alura.com.br/assets/img/alura-logo-white.1570550707.svg" alt="Logo Alura" />

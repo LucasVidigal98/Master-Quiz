@@ -1,41 +1,53 @@
-import styled from 'styled-components';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import db from '../db.json';
 
-import { Widget } from '../src/components/Widget';
+import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
+import QuizConatiner from '../src/components/QuizContainer';
 import QuizBackground from '../src/components/QuizBackground';
-
-export const QuizConatiner = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px){
-    margin: auto;
-    padding: 15px;
-  }
-`;
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
+import QuizLogo from '../src/components/QuizLogo';
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = useState('');
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizConatiner>
+        <QuizLogo />
         <Widget>
           <Widget.Header>
-              <h1>The legend of zelda</h1>
-            </Widget.Header>
-            
-            <Widget.Content>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni praesentium a rem cum ducimus, sunt cumque optio.</p>
+            <h1>Ayrton Senna é do Brasil !!</h1>
+          </Widget.Header>
+
+          <Widget.Content>
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              router.push(`./quiz?name=${name}`);
+            }}
+            >
+              <Input
+                placeholder="Diz aí seu nome"
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+              />
+              <Button type="submit" disabled={name.length === 0}>
+                Jogar
+              </Button>
+            </form>
           </Widget.Content>
         </Widget>
 
         <Widget>
           <Widget.Content>
-            <h1>Quiz da galera</h1>
+            <h1>Quiz sobre Ayrton Senna</h1>
 
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia natus pariatur, aut sit temporibus dolorem ipsa? Asperiores dolore ducimus sunt iste tenetur? Neque, quibusdam. Architecto fugiat accusamus nobis labore sunt.</p>
+            <p>Teste seus conhecimentos sobre essa lenda do automobilismo mundial</p>
           </Widget.Content>
         </Widget>
         <Footer />

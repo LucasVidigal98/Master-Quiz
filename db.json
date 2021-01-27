@@ -1,28 +1,76 @@
 {
-    "bg": "https://i2.wp.com/css-tricks.com/wp-content/uploads/2017/06/css-is-awesome-scaled.jpg?resize=1536%2C1208&ssl=1",
+    "bg": "https://coolwallpapers.me/picsup/2915014-formula-1-ayrton-senna___mixed-wallpapers.jpg",
   "title": "Quiz CSS da Alura",
   "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
+      "image": "https://start.youse.com.br/wp-content/uploads/2019/11/image_Easy-Resize.com-1.jpg",
+      "title": "Em que ano Senna venceu seu primeiro GP do Brasil?",
       "description": "Essa é pra aquecer",
       "answer": 2,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "1993",
+        "1992",
+        "1991",
+        "1988"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
+      "image": "https://www.atribuna.com.br/image/contentid/policy:1.94108:1584811528/Ayrton-Senna.jpg?f=2x1&$p$f=4826fca&q=0.8&w=1500&$w=f075b93",
+      "title": "Quantas corridas Senna ganhou na F1?",
+      "description": "Foram Muitas!",
       "answer": 0,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+         "41",
+         "49",
+         "43",
+         "47"
+      ]
+    },
+    {
+      "image": "https://thumbs.gfycat.com/BackElaborateHammerkop-max-1mb.gif",
+      "title": "Senna era conhecido por ser o melhor piloto em pista molhada.",
+      "description": "O melhor!",
+      "answer": 0,
+      "alternatives": [
+         "Verdadeiro",
+         "Falso"
+      ]
+    },
+    {
+      "image": "https://i.pinimg.com/originals/49/b2/29/49b22942441b8849b75bedba37432be2.gif",
+      "title": "Senna foi o piloto que mais vezes conquistou o GP ...",
+      "description": "Até hoje o recorde de vitória nesse GP é liderado por Senna!",
+      "answer": 3,
+      "alternatives": [
+         "da Inglaterra",
+         "da França",
+         "do Brasil",
+         "de Monâco"
+      ]
+    },
+    {
+      "image": "https://diariodopoder.com.br/wp-content/uploads/2019/10/senna-foto-facebook-1024x570.jpg",
+      "title": "Quantas vezes Senna foi campeão da F1?",
+      "description": "É do Brasil!!!",
+      "answer": 1,
+      "alternatives": [
+         "Duas Vezes",
+         "Três Vezes",
+         "Quatro Vezes",
+         "Cinco Vezes"
+      ]
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSiXjHCXFbNzZOh7mtE7WT8QJBK4NgcI0z2g&usqp=CAU",
+      "title": "Senna teve um relacionamento com uma apresentadora de TV muito famosa. Quem era essa apresentadora?",
+      "description": "Muita repercussão!",
+      "answer": 0,
+      "alternatives": [
+         "Xuxa",
+         "Eliane",
+         "Hebe Camargo",
+         "Mara Maravilha"
       ]
     }
   ],
@@ -31,8 +79,8 @@
   ],
   "theme": {
     "colors": {
-      "primary": "#0d47a1",
-      "secondary": "#29b6f6",
+      "primary": "#b2a300",
+      "secondary": "#52b202",
       "mainBg": "#171B35",
       "contrastText": "#FFFFFF",
       "wrong": "#FF5722",
