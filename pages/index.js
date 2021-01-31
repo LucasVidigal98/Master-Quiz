@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 import db from '../db.json';
 
 import Widget from '../src/components/Widget';
@@ -10,6 +11,7 @@ import QuizBackground from '../src/components/QuizBackground';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
 import QuizLogo from '../src/components/QuizLogo';
+import Link from '../src/components/Link';
 
 export default function Home() {
   const router = useRouter();
@@ -19,7 +21,16 @@ export default function Home() {
     <QuizBackground backgroundImage={db.bg}>
       <QuizConatiner>
         <QuizLogo />
-        <Widget>
+        <Widget
+          as={motion.section}
+          transition={{ delay: 0, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, y: '0' },
+            hidden: { opacity: 0, y: '100%' },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Widget.Header>
             <h1>Ayrton Senna é do Brasil !!</h1>
           </Widget.Header>
@@ -43,14 +54,50 @@ export default function Home() {
           </Widget.Content>
         </Widget>
 
-        <Widget>
-          <Widget.Content>
-            <h1>Quiz sobre Ayrton Senna</h1>
+        <Widget
+          as={motion.section}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, y: '0' },
+            hidden: { opacity: 0, y: '100%' },
+          }}
+          initial="hidden"
+          animate="show"
+        >
+          <Widget.Header>
+            <h1>Quizes da Galera</h1>
+          </Widget.Header>
 
-            <p>Teste seus conhecimentos sobre essa lenda do automobilismo mundial</p>
+          <Widget.Content>
+
+            {db.external.map((link) => {
+              const [projectName, githubUser] = link
+                .replace(/\//g, '')
+                .replace('https:', '')
+                .replace('.vercel.app', '')
+                .split('.');
+              return (
+                <Widget.Topic href={`/quiz/${projectName}___${githubUser}`} as={Link}>
+                  {link
+                    .replace(/\//g, '')
+                    .replace('https:', '')
+                    .replace('.vercel.app', '')
+                    .split('.')}
+                </Widget.Topic>
+              );
+            })}
           </Widget.Content>
         </Widget>
-        <Footer />
+        <Footer
+          as={motion.footer}
+          transition={{ delay: 0.8, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, y: '0' },
+            hidden: { opacity: 0, y: '100%' },
+          }}
+          initial="hidden"
+          animate="show"
+        />
       </QuizConatiner>
       <GitHubCorner />
     </QuizBackground>
